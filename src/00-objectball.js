@@ -246,17 +246,9 @@ function winningTeam() {
     }
 }
 function playerWithLongestName() {
-    const object = gameObject();
-    let players = [];
     let currentPlayerLength;
     let longestNameLength;
     let longestName;
-    for (let i in Object.keys(object["home"]["players"])) {
-        players.push(Object.keys(object["home"]["players"])[i]);
-    }
-    for (let i in Object.keys(object["away"]["players"])) {
-        players.push(Object.keys(object["away"]["players"])[i]);
-    }
     longestNameLength = players[0].length;
     longestName = players[0];
     for (let i = 0; i < players.length; i++) {
@@ -269,10 +261,8 @@ function playerWithLongestName() {
     return longestName;
 }
 function doesLongNameStealALot() {
-    const object = gameObject();
     const longestName = playerWithLongestName();
     const longestNameSteals = playerStats(longestName)["steals"];
-    let players = [];
     let currentPlayer;
     let currentPlayerSteals;
     for (let i in Object.keys(object["home"]["players"])) {
