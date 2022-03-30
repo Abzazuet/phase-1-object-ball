@@ -207,12 +207,6 @@ function mostPointsScored() {
     let currentPlayerPoints;
     let maxPointPlayer;
     let maxPoints;
-    for (let i in Object.keys(object["home"]["players"])) {
-        players.push(Object.keys(object["home"]["players"])[i]);
-    }
-    for (let i in Object.keys(object["away"]["players"])) {
-        players.push(Object.keys(object["away"]["players"])[i]);
-    }
     maxPoints = playerStats(players[0])["points"];
     maxPointPlayer = players[0];
     for (let i = 0; i < players.length; i++) {
@@ -265,12 +259,6 @@ function doesLongNameStealALot() {
     const longestNameSteals = playerStats(longestName)["steals"];
     let currentPlayer;
     let currentPlayerSteals;
-    for (let i in Object.keys(object["home"]["players"])) {
-        players.push(Object.keys(object["home"]["players"])[i]);
-    }
-    for (let i in Object.keys(object["away"]["players"])) {
-        players.push(Object.keys(object["away"]["players"])[i]);
-    }
     for (let i = 0; i < players.length; i++) {
         currentPlayer = players[i];
         currentPlayerSteals = playerStats(currentPlayer)["steals"];
